@@ -1,0 +1,59 @@
+<div>
+    {{#each article}}
+      <div class="card">
+        <div class = "card-body">
+           <a href="{{this.link}}" class="card-title" target="_blank"><h4>{{this.title}}</h4></a>
+           <p>{{this.summary}}</p>
+            <form method="POST" action="/remove/{{this._id}}?_method=PUT">
+                <button type="button" class="btn btn-outline-info add-comment" id="AddComment{{this._id}}" articleid="{{this._id}}" class="add-comment">Add Comment</button>
+                <button type="submit" class="btn btn-outline-danger" id="RemoveSaved">Remove Saved</button>
+            </form>
+            
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  {{#each article}}
+<div id="myModal{{this._id}}" class="modal">
+
+  <div id="commentModal" class="modal-content">
+    <div class="modal-header">
+      <h2>Comments</h2>
+      <span id="close" articleid={{this._id}} class="close">&times;</span>
+      
+    </div>
+
+    <div class="modal-body">
+
+        <div class="commentSaved" class="modal-content">
+        {{#each this.comments}}
+            <h3>{{this.title}}</h3> 
+            <h4>{{this.message}}</h4>
+            <form method="POST" action="/remove/comment/{{this._id}}?_method=PUT">
+                <button type="submit" class="btn btn-danger" id="RemoveComment">Remove Comment</button>
+            </form>
+            {{/each}}
+        
+        </div>
+        <hr>
+        <form class="navbar-form navbar-left" action="/articlenotes/{{this.id}}" method="POST">
+            <div class="form-group">
+              <input id="titleinput" type="text" name="title" placeholder="Title"><br>
+              <textarea id="bodyinput" class="form-control" rows="4" id="commentMessage" name="message" placeholder="Comments"></textarea>
+            </div>
+            <button id="savenote" type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+  {{/each}}
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  <script src="/assets/js/index.js"></script>
