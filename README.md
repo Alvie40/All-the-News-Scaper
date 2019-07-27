@@ -1,5 +1,19 @@
 # All the News That's Fit to Scrape
 
+## links
+
+### Demo
+
+https://allthenewsscraper.herokuapp.com/articles
+
+### Portfolio
+
+https://alvie40.github.io/Responsive-Portfolio/
+
+### Github
+
+https://github.com/Alvie40/All-the-News-Scaper
+
 ### Overview
 
 In this assignment, you'll create a web app that lets users view and leave comments on the latest news. But you're not going to actually write any articles; instead, you'll flex your Mongoose and Cheerio muscles to scrape news from another site.
