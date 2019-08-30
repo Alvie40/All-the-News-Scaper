@@ -1,21 +1,11 @@
 {
   "name": "web-scraper",
   "version": "1.0.0",
-  "description": "In this assignment, you'll create a web app that lets users view and leave comments on the latest news. But you're not going to actually write any articles; instead, you'll flex your Mongoose and Cheerio muscles to scrape news from another site.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nicholettesams/Web-Scraper.git"
-  },
-  "author": "Nicholette Sams",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nicholettesams/Web-Scraper/issues"
-  },
-  "homepage": "https://github.com/nicholettesams/Web-Scraper#readme",
+
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
